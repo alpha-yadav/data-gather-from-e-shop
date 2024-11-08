@@ -1,6 +1,5 @@
 # data collector
 ### Simple runing
-```
-batch
+```batch
 RUN
 ```
