@@ -7,8 +7,8 @@ time.sleep(2)
 data=open("Data.csv","w")
 data.write("Product,Price,Rating")
 def remove(st:str)->str:
-     st=st.replace("\n"," ")
-     return st.replace("\"","inch")
+     return st.replace("\n"," ")
+      #"\""+st.replace("\"","inch")+"\""
 for ii in range(1,101):
     nok=0
     web.get("https://www.amazon.in/s?i=electronics&rh=n%3A6612025031&fs=true&page="+str(ii)+"&qid=1730994607&ref=sr_pg_2")
@@ -20,7 +20,7 @@ for ii in range(1,101):
     k=web.find_elements("css selector","div.sg-col-4-of-24.sg-col-4-of-12.s-result-item.s-asin.sg-col-4-of-16")
     for i in k[2:-1]:
          try:
-            n='"'+i.find_element("tag name","h2").text+'"'
+            n='"'+i.find_element("tag name","h2").text.replace("\"","inch")+'"'
             p="\""+i.find_element("class name","a-price").text+"\""
             #"span.a-icon-alt")[0].innerText.split(" ")[0]
             temp=i.find_element("css selector",".a-row.a-size-small")
