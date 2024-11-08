@@ -1,1 +1,1 @@
-python "data-collector.py"
+python "data_collector.py"
